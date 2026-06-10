@@ -1,5 +1,1 @@
-# www → apex
-https://www.tumpline.ca/* https://tumpline.ca/:splat 301!
-
-# Catch-all SPA fallback (not needed for static but harmless)
-/* /index.html 200
+# www → apex is handled via Cloudflare DNS (CNAME flatten), not here
