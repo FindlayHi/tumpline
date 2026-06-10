@@ -1,0 +1,17 @@
+services:
+  tumpline:
+    image: nginx:alpine
+    container_name: tumpline
+    restart: unless-stopped
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8080:80"          # local preview; Cloudflare Tunnel or Traefik sits in front
+    labels:
+      # Traefik labels — swap tumpline.ca for your local hostname if testing internally
+      - "traefik.enable=true"
+      - "traefik.http.routers.tumpline.rule=Host(`tumpline.ca`)"
+      - "traefik.http.routers.tumpline.entrypoints=websecure"
+      - "traefik.http.routers.tumpline.tls.certresolver=letsencrypt"
+      - "traefik.http.services.tumpline.loadbalancer.server.port=80"
