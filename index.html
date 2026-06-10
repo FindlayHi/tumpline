@@ -290,7 +290,13 @@
             color: rgb(var(--c-glacial-cyan) / 1);
         }
 
-        /* ── 5. Ingress Retirement: hide unpublished Learn more link ── */
+        /* ── 5. Ingress Retirement: restore dark green in light mode ── */
+        .bento-tile.bg-boreal-deep {
+            background-color: rgb(var(--c-boreal-deep) / 1);
+            border: none;
+        }
+
+        /* ── 5b. Ingress Retirement: hide unpublished Learn more link ── */
         .bento-tile.bg-boreal-deep .mt-auto a {
             display: none;
         }
@@ -396,9 +402,6 @@
 </div>
 <!-- Card 2 -->
 <div class="md:col-span-4 group bento-tile p-10 rounded-xl flex flex-col min-h-[400px] bg-boreal-deep text-cotton-grass border-none overflow-hidden relative">
-<div class="absolute top-0 right-0 p-8 opacity-20">
-<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1">cloud_done</span>
-</div>
 <div class="relative z-10">
 <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-8">
 <span class="material-symbols-outlined text-glacial-cyan">cloud_upload</span>
