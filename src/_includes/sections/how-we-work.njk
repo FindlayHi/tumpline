@@ -1,0 +1,24 @@
+<section id="approach" class="bg-deep text-deep-ink">
+  <div class="max-w-[1180px] mx-auto px-8 py-[100px]">
+    <div class="grid gap-[60px] items-start" style="grid-template-columns:1fr 1fr;">
+      <div style="animation:tl-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 28%;">
+        <div class="font-mono text-xs font-medium tracking-[.2em] uppercase text-accent-d mb-[18px]">How we work</div>
+        <h2 class="font-serif font-semibold leading-[1.1] tracking-[-0.01em] m-0 mb-5" style="font-size:clamp(30px,3.6vw,44px);">We bring you what we use ourselves.</h2>
+        <p class="text-lg leading-[1.64] text-deep-muted m-0 mb-[18px]">Tumpline runs lean on the same tools and automations we set up for clients. If something doesn't make us faster or cheaper, we don't keep it — and we won't sell it to you.</p>
+        <p class="text-lg leading-[1.64] text-deep-muted m-0">That's the whole pitch: we've already done the homework on our own time, so you get practical answers instead of a sales process.</p>
+      </div>
+      <div class="flex flex-col gap-[18px]">
+        {% for step in site.process %}
+          <div class="process-step">
+            <div class="font-serif text-[26px] text-accent-d leading-none">{{ step.n }}</div>
+            <div>
+              <div class="font-semibold text-[17px] mb-[5px] text-deep-ink">{{ step.title }}</div>
+              <div class="text-[15.5px] leading-[1.55] text-deep-muted">{{ step.body }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% include "sections/private-ai.njk" %}
+  </div>
+</section>

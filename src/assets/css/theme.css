@@ -1,0 +1,91 @@
+/* Tumpline theme tokens. Default = canvas. Switch with <html data-theme="pine|night|maple|bold">. */
+:root {
+  --bg: #f4efe7;
+  --paper: #fdfaf5;
+  --band: #ece5d9;
+  --ink: #211f1b;
+  --muted: #6f675b;
+  --line: #e3dccf;
+  --accent: #b4502b;
+  --accent-ink: #fdfaf5;
+  --accent-d: #cf7a4f;
+  --deep: #26231d;
+  --deep-ink: #f1ebdf;
+  --deep-muted: #aca08c;
+  --deep-line: #3a362e;
+}
+[data-theme="pine"] {
+  --bg: #eceeec;
+  --paper: #ffffff;
+  --band: #e2e6e3;
+  --ink: #1a201e;
+  --muted: #5d6562;
+  --line: #dbe0dd;
+  --accent: #2f5d50;
+  --accent-ink: #f2f6f4;
+  --accent-d: #74b29c;
+  --deep: #18211e;
+  --deep-ink: #eef2f0;
+  --deep-muted: #aab6b1;
+  --deep-line: #2c3833;
+}
+[data-theme="night"] {
+  --bg: #1b1916;
+  --paper: #232019;
+  --band: #201d17;
+  --ink: #f0e9dd;
+  --muted: #a89e8c;
+  --line: #36322b;
+  --accent: #d98a4e;
+  --accent-ink: #1b1916;
+  --accent-d: #e3a06a;
+  --deep: #131210;
+  --deep-ink: #f0e9dd;
+  --deep-muted: #9a9080;
+  --deep-line: #2a2620;
+}
+[data-theme="maple"] {
+  --bg: #f6f2ec;
+  --paper: #fdfbf7;
+  --band: #ece4d8;
+  --ink: #211c1a;
+  --muted: #6f635c;
+  --line: #e4dccf;
+  --accent: #c1272d;
+  --accent-ink: #fdfbf7;
+  --accent-d: #e8746b;
+  --deep: #271a18;
+  --deep-ink: #f3ebe5;
+  --deep-muted: #b09a93;
+  --deep-line: #3d2c29;
+}
+[data-theme="bold"] {
+  --bg: #f6f6f3;
+  --paper: #ffffff;
+  --band: #eaeae4;
+  --ink: #15140f;
+  --muted: #565249;
+  --line: #e2e1da;
+  --accent: #2f43d4;
+  --accent-ink: #ffffff;
+  --accent-d: #8e9bf2;
+  --deep: #121317;
+  --deep-ink: #f3f3f0;
+  --deep-muted: #a6a6ad;
+  --deep-line: #2a2b31;
+}
+
+/* globals (from source) */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+@keyframes tl-reveal { from { opacity:0; transform:translateY(20px);} to { opacity:1; transform:none; } }
+
+/* focus rings — replaces the source's non-standard style-focus attribute */
+.tp-root input:focus,
+.tp-root select:focus,
+.tp-root textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 20%, transparent);
+}

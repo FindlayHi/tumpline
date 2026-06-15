@@ -1,0 +1,16 @@
+<section id="services" class="max-w-[1180px] mx-auto px-8 py-[100px]">
+  <div class="max-w-[46rem] mb-[54px]" style="animation:tl-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 30%;">
+    <div class="font-mono text-xs font-medium tracking-[.2em] uppercase text-accent mb-4">What we do</div>
+    <h2 class="font-serif font-semibold leading-[1.1] tracking-[-0.01em] m-0 mb-4" style="font-size:clamp(30px,3.6vw,44px);">Four ways we lighten the load.</h2>
+    <p class="text-lg leading-[1.6] text-muted m-0">We start with the problem, not the product. Most teams need less than a vendor will sell them — so we build only what earns its keep.</p>
+  </div>
+  <div class="grid grid-cols-2 gap-[22px]">
+    {% for svc in site.services %}
+      <div class="service-card">
+        <div class="font-mono text-[13px] text-accent mb-[18px]">{{ svc.n }}</div>
+        <h3 class="font-serif font-semibold text-[23px] m-0 mb-3">{{ svc.title }}</h3>
+        <p class="text-base leading-[1.62] text-muted m-0">{{ svc.body }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
