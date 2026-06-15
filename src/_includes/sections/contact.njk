@@ -1,5 +1,5 @@
 <section id="contact" class="border-t border-line bg-band">
-  <div class="max-w-[1180px] mx-auto px-8 py-[100px]" style="display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:start;">
+  <div class="max-w-[1180px] mx-auto px-4 md:px-8 py-16 md:py-[100px] grid grid-cols-1 md:grid-cols-[1fr_1.05fr] gap-10 md:gap-[60px] items-start">
     <div>
       <div class="font-mono text-xs font-medium tracking-[.2em] uppercase text-accent mb-4">Get in touch</div>
       <h2 class="font-serif font-semibold leading-[1.08] tracking-[-0.012em] m-0 mb-[18px]" style="font-size:clamp(30px,3.6vw,46px);">Let's see if we can help.</h2>
@@ -14,10 +14,10 @@
       </div>
     </div>
 
-    <div class="bg-paper border border-line rounded-[18px] p-[34px]" style="box-shadow:0 24px 60px -36px rgba(0,0,0,.5);">
+    <div class="bg-paper border border-line rounded-[18px] p-6 md:p-[34px]" style="box-shadow:0 24px 60px -36px rgba(0,0,0,.5);">
       <div data-form-wrapper>
         <form id="consult-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post" novalidate>
-          <div class="grid grid-cols-2 gap-[18px] mb-[18px]">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-[18px] mb-[18px]">
             <div>
               <label class="block text-[13px] font-semibold mb-[7px]">Name <span class="text-accent">*</span></label>
               <input name="name" id="f-name" required aria-required="true" type="text" placeholder="Jordan Lee" class="form-field">
@@ -28,7 +28,7 @@
               <input name="company" id="f-company" type="text" placeholder="Acme Co." class="form-field">
             </div>
           </div>
-          <div class="grid grid-cols-2 gap-[18px] mb-[18px]">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-[18px] mb-[18px]">
             <div>
               <label class="block text-[13px] font-semibold mb-[7px]">Email <span class="text-accent">*</span></label>
               <input name="email" id="f-email" required aria-required="true" type="email" placeholder="you@company.com" class="form-field">

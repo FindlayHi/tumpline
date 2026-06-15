@@ -1,5 +1,5 @@
 <header style="position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 92%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);">
-  <div class="max-w-[1180px] mx-auto px-8 flex items-center justify-between" style="height:68px;">
+  <div class="max-w-[1180px] mx-auto px-4 md:px-8 flex items-center justify-between" style="height:68px;">
     <a href="#" class="flex items-center gap-3 no-underline text-ink">
       <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M4 15.5 Q16 4 28 15.5" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
@@ -9,12 +9,12 @@
       </svg>
       <span class="font-serif font-semibold text-xl">Tumpline</span>
     </a>
-    <nav class="flex items-center gap-8">
+    <nav class="flex items-center gap-4 md:gap-8">
       {% for item in site.nav %}
         {% if item.cta %}
           <a href="{{ item.href }}" class="btn-primary" style="padding:10px 20px;font-size:14px;">{{ item.label }}</a>
         {% else %}
-          <a href="{{ item.href }}" class="nav-link">{{ item.label }}</a>
+          <a href="{{ item.href }}" class="nav-link hidden md:inline">{{ item.label }}</a>
         {% endif %}
       {% endfor %}
     </nav>
