@@ -59,9 +59,12 @@
               <path d="M5 12.5 L10 17.5 L19 7" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3 class="font-serif font-semibold text-[26px] m-0 mb-3">Thanks, <span data-name></span> — we've got it.</h3>
-          <p class="text-[16.5px] leading-[1.6] text-muted mx-auto mb-6 max-w-[30em]">We'll reply within one business day to set a time, and we'll come to the call having looked into what you shared. Talk soon.</p>
-          <button data-reset class="btn-secondary" style="padding:12px 22px;font-size:15px;">Send another</button>
+          <h3 class="font-serif font-semibold text-[26px] m-0 mb-3">Thanks, <span data-name></span>. We've got it.</h3>
+          <p class="text-[16.5px] leading-[1.6] text-muted mx-auto mb-6 max-w-[30em]">We've opened Calendly in a new tab so you can lock in a time now. If it didn't open, hit the button below and pick a slot that works for you.</p>
+          <div class="flex flex-wrap justify-center gap-3">
+            <button data-reset class="btn-secondary" style="padding:12px 22px;font-size:15px;">Send another</button>
+            <a href="{{ site.calendlyUrl }}" target="_blank" rel="noopener" class="btn-primary" style="padding:12px 22px;font-size:15px;">Book a call</a>
+          </div>
         </div>
       </div>
     </div>
