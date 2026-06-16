@@ -18,23 +18,23 @@ export default {
   services: [
     {
       n: "01",
-      title: "Web design & web apps",
-      body: "Marketing sites and internal tools that are quick to use and cheap to run. Clean, fast, and built around how your team actually works.",
+      title: "VMware Exit",
+      body: "Broadcom changed the math on your renewal. We inventory the estate, design the landing zone, and execute the migration before the next invoice lands.",
     },
     {
       n: "02",
-      title: "Automation",
-      body: "We find the repetitive work eating your week and quietly hand it to software. Fewer manual steps, fewer mistakes, more time for the things only people can do.",
+      title: "Ingress Retirement",
+      body: "End-of-life NGINX is a liability with a date on it. We replace aging ingress with supported, automated alternatives — without breaking what sits behind it.",
     },
     {
       n: "03",
-      title: "Cost reduction",
-      body: "Paying for software you've outgrown or barely use? We swap bloated subscriptions for leaner, often cheaper alternatives — and tell you honestly when the one you have is fine.",
+      title: "FinOps Assessment",
+      body: "Two weeks with your billing data. You get a prioritized savings plan you can act on the day we hand it over.",
     },
     {
       n: "04",
-      title: "Sensible AI",
-      body: "AI where it actually helps. We break big jobs into small steps so smaller, cheaper models can do them well — and run them privately when your data shouldn't leave the building.",
+      title: "Platform & Infrastructure as Code",
+      body: "CI/CD pipelines that actually work for your engineers. We codify your infrastructure and build delivery platforms your team can run without us.",
     },
   ],
   process: [
