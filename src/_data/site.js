@@ -28,7 +28,7 @@ export default {
     },
     {
       n: "03",
-      title: "FinOps Assessment",
+      title: "Cloud Bill Audit",
       body: "Two weeks with your billing data. You get a prioritized savings plan you can act on the day we hand it over.",
     },
     {
