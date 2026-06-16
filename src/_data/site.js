@@ -1,5 +1,8 @@
 export default {
   email: "hello@tumpline.ca",
+  supabaseUrl: "REPLACE_ME",
+  supabaseAnonKey: "REPLACE_ME",
+  calendlyUrl: "REPLACE_ME",
   nav: [
     { label: "Services", href: "#services" },
     { label: "Approach", href: "#approach" },

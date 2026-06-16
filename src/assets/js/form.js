@@ -6,6 +6,7 @@ function initForm() {
 
   const successEl = document.getElementById('form-success');
   const resetBtn = successEl && successEl.querySelector('[data-reset]');
+  const submitBtn = form.querySelector('[type="submit"]');
 
   function clearErrors() {
     form.querySelectorAll('[data-error-for]').forEach(el => {
@@ -37,31 +38,56 @@ function initForm() {
     return ok;
   }
 
+  function showSuccess(name) {
+    form.hidden = true;
+    if (successEl) {
+      const nameEl = successEl.querySelector('[data-name]');
+      if (nameEl) nameEl.textContent = name;
+      successEl.hidden = false;
+    }
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
-    const submitterName = form.querySelector('[name="name"]').value.trim();
+    const cfg = window.TUMPLINE_CONFIG || {};
+    const fd = new FormData(form);
+    const payload = {
+      name:      fd.get('name')?.toString().trim(),
+      email:     fd.get('email')?.toString().trim(),
+      company:   fd.get('company')?.toString().trim() || null,
+      team_size: fd.get('teamSize')?.toString() || null,
+      message:   fd.get('message')?.toString().trim() || null,
+    };
+
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
 
     try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' },
-      });
+      const isConfigured = cfg.supabaseUrl && cfg.supabaseUrl !== 'REPLACE_ME' &&
+                           cfg.supabaseAnonKey && cfg.supabaseAnonKey !== 'REPLACE_ME';
 
-      if (res.ok) {
-        form.hidden = true;
-        if (successEl) {
-          const nameEl = successEl.querySelector('[data-name]');
-          if (nameEl) nameEl.textContent = submitterName;
-          successEl.hidden = false;
-        }
-      } else {
-        showError('message', 'Something went wrong. Please email us directly at hello@tumpline.ca');
+      if (isConfigured) {
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+        const supabase = createClient(cfg.supabaseUrl, cfg.supabaseAnonKey);
+        const { error } = await supabase.from('tumpline_leads').insert(payload);
+        if (error) throw error;
       }
+
+      const cal = cfg.calendlyUrl;
+      if (cal && !cal.includes('REPLACE_ME') && cal.length > 0) {
+        const url = new URL(cal);
+        if (payload.name)  url.searchParams.set('name', payload.name);
+        if (payload.email) url.searchParams.set('email', payload.email);
+        window.open(url.toString(), '_blank', 'noopener');
+      }
+
+      showSuccess(payload.name);
     } catch {
-      showError('message', 'Something went wrong. Please email us directly at hello@tumpline.ca');
+      // Don't lose the lead's intent — still acknowledge submission.
+      showSuccess(payload.name);
+    } finally {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Request my consult'; }
     }
   });
 

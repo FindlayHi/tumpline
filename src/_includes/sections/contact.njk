@@ -16,7 +16,7 @@
 
     <div class="bg-paper border border-line rounded-[18px] p-6 md:p-[34px]" style="box-shadow:0 24px 60px -36px rgba(0,0,0,.5);">
       <div data-form-wrapper>
-        <form id="consult-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post" novalidate>
+        <form id="consult-form" novalidate>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-[18px] mb-[18px]">
             <div>
               <label class="block text-[13px] font-semibold mb-[7px]">Name <span class="text-accent">*</span></label>
@@ -67,3 +67,11 @@
     </div>
   </div>
 </section>
+
+<script>
+  window.TUMPLINE_CONFIG = {
+    supabaseUrl:     {{ site.supabaseUrl     | dump | safe }},
+    supabaseAnonKey: {{ site.supabaseAnonKey | dump | safe }},
+    calendlyUrl:     {{ site.calendlyUrl     | dump | safe }}
+  };
+</script>
